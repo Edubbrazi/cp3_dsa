@@ -82,9 +82,9 @@ void exibirMenu() {
     printf("          ATM FIAP             \n");
     printf("===============================\n");
     printf("1. Consultar Saldo\n");
-    printf("2. Realizar Depósito\n");
+    printf("2. Realizar Deposito\n");
     printf("3. Realizar Saque\n");
-    printf("4. Ver Extrato (Histórico)\n");
+    printf("4. Ver Extrato (Historico)\n");
     printf("0. Sair\n");
     printf("-------------------------------\n");
 }
@@ -95,15 +95,15 @@ void consultarSaldo(float saldo) {
 //Função realizar deposito
 float realizarDeposito(float saldo) {
     float valor;
-    printf("\nDigite o valor do depósito: R$ ");
+    printf("\nDigite o valor do deposito: R$ ");
     scanf("%f", &valor);
     //Mensagem de erro referente ao valor do deposito
     if (valor <= 0) {
-        printf("Erro: Valor de depósito deve ser positivo.\n");
+        printf("Erro: Valor de deposito deve ser positivo.\n");
         return 0;
     }
     //Mensagem de êxito em deposito
-    printf("Depósito de R$ %.2f realizado com sucesso!\n", valor);
+    printf("Deposito de R$ %.2f realizado com sucesso!\n", valor);
     return valor;
 }
 //Função de saque
@@ -133,7 +133,7 @@ void exibirExtrato(float saldo, float historico[], int totalOp) {
         int limite = (totalOp < 3) ? totalOp : 3;
         for (int i = 0; i < limite; i++) {
             if (historico[i] > 0)
-                printf("%d. DEPÓSITO: + R$ %.2f\n", i + 1, historico[i]);
+                printf("%d. DEPOSITO: + R$ %.2f\n", i + 1, historico[i]);
             else
                 printf("%d. SAQUE:    - R$ %.2f\n", i + 1, -historico[i]);
         }
